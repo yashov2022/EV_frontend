@@ -11,7 +11,7 @@ function RegisterPage() {
      function Register()
      {
        axios.post(
-    "http://localhost:8081/auth/register",
+    "/auth/register",
     {
         username,
         password

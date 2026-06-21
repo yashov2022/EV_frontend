@@ -11,7 +11,7 @@ import RegisterPage from "./RegisterPage";
      function Login()
      {
         axios.post(
-    "http://localhost:8081/auth/login",
+    "/auth/login",
     {
         username,
         password
