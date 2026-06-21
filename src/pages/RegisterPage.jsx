@@ -10,7 +10,7 @@ function RegisterPage() {
       const navigate = useNavigate();
      function Register()
      {
-       axios.post(
+       api.post(
     "/auth/register",
     {
         username,

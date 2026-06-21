@@ -10,7 +10,7 @@ import RegisterPage from "./RegisterPage";
     const navigate = useNavigate();
      function Login()
      {
-        axios.post(
+        api.post(
     "/auth/login",
     {
         username,
