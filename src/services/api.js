@@ -1,30 +1,26 @@
-import axios from "axios";
+import api from "../services/api";
 
-const api = axios.create({
+function Login() {
 
-    baseURL:
-        "https://ev-backend-production.up.railway.app"
-
-});
-
-api.interceptors.request.use(
-
-    (config) => {
-
-        const token =
-            localStorage.getItem("token");
-
-        if(token){
-
-            config.headers.Authorization =
-                `Bearer ${token}`;
-
+    api.post(
+        "/auth/login",
+        {
+            username,
+            password
         }
+    )
+    .then((response)=>{
 
-        return config;
+        localStorage.setItem(
+            "token",
+            response.data.token
+        );
 
-    }
+        localStorage.setItem(
+            "role",
+            response.data.role
+        );
 
-);
+    });
 
-export default api;
+}
