@@ -7,7 +7,16 @@ function Navbar() {
     const role =
         localStorage.getItem("role");
      
-  
+      function logout() {
+
+        localStorage.removeItem("token");
+
+        localStorage.removeItem("role");
+
+        navigate("/login");
+
+    }
+
     return (
 
         <div className="button-container">
@@ -59,15 +68,6 @@ function Navbar() {
     );
 
 }
-  function logout() {
-
-        localStorage.removeItem("token");
-
-        localStorage.removeItem("role");
-
-        navigate("/login");
-
-    }
 
 
 export default Navbar;
