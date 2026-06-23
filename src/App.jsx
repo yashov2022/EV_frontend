@@ -17,12 +17,16 @@ function App() {
     <BrowserRouter>
 
       <Routes>
-
-        <Route
-          path="/"
-          element={ <ProtectedRoute><DashboardPage /></ProtectedRoute>}
-        />
-
+       <Route
+       path="/"
+       element={
+        localStorage.getItem("role") === "ADMIN"
+            ? <Navigate to="/dashboard"/>
+            : localStorage.getItem("role") === "USER"
+                ? <Navigate to="/stations"/>
+                : <Navigate to="/login"/>
+       }
+      />
         <Route
           path="/login"
           element={ <LoginPage /> }
@@ -53,11 +57,14 @@ function App() {
           element={ <ProtectedRoute><MapPage /></ProtectedRoute> }
         />
 
-        <Route
-          path="/dashboard"
-          element={ <ProtectedRoute><DashboardPage /></ProtectedRoute> }
-        />
-
+       <Route
+      path="/dashboard"
+     element={
+        localStorage.getItem("role") === "ADMIN"
+            ? <DashboardPage/>
+            : <Navigate to="/stations"/>
+    }
+/>
       </Routes>
 
     </BrowserRouter>
