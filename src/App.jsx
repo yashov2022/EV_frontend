@@ -18,10 +18,10 @@ function App() {
 
       <Routes>
 
-        <Route
+        {/* <Route
           path="/"
           element={ <ProtectedRoute><DashboardPage /></ProtectedRoute>}
-        />
+        /> */}
 
         <Route
           path="/login"
