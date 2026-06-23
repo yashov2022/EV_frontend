@@ -22,7 +22,7 @@ function App() {
        path="/"
        element={
         localStorage.getItem("role") === "ADMIN"
-            ? <Navigate to="/dashboard"/>
+            ? <Navigate to="/login"/>
             : localStorage.getItem("role") === "USER"
                 ? <Navigate to="/stations"/>
                 : <Navigate to="/login"/>
