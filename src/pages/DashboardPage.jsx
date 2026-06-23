@@ -63,13 +63,7 @@ function DashboardPage() {
                     <p>Booked</p>
                 </div>
 
-                <div className="dashboard-card">
-                    <h2>
-                        {data.totalBookings}
-                    </h2>
-
-                    <p>Bookings</p>
-                </div>
+               
 
             </div>
 
