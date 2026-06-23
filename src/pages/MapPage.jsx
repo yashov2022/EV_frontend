@@ -20,6 +20,8 @@ import {
     Marker,
     Popup
 } from "react-leaflet";
+import { useNavigate } from "react-router-dom";
+import slots from "./Slots";
 
 function MapPage() {
 
@@ -73,7 +75,7 @@ function MapPage() {
 
              <button
                  onClick={() =>
-            navigate(`/slots/${station.id}`)
+            navigate(`/slots/${station.id} `)
                   }
               >
         View Slots
