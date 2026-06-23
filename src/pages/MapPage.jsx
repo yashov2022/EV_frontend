@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css";
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
+import { useNavigate } from "react-router-dom";
 
 delete L.Icon.Default.prototype._getIconUrl;
 
@@ -26,6 +27,7 @@ import slots from "./Slots";
 function MapPage() {
 
     const [stations, setStations] = useState([]);
+    const navigate = useNavigate();
 
    useEffect(() => {
 
