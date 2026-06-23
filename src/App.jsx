@@ -9,6 +9,7 @@ import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import "./App.css";
+import { Navigate } from "react-router-dom";
 
 function App() {
 
