@@ -1,19 +1,27 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import api from "../services/api";
 function DashboardPage() {
 
     const [data, setData] =
         useState(null);
+    const [error, setError] =
+        useState("");
 
     useEffect(() => {
 
        api.get("/dashboard")
         .then((response) => {
             setData(response.data);
+        })
+        .catch(() => {
+            setError("Unable to load dashboard data. Please try again later.");
         });
 
     }, []);
+
+    if (error) {
+        return <h1>{error}</h1>;
+    }
 
     if (!data) {
 

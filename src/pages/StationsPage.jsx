@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import StationCard from "../component/StationCard";
 import { useNavigate } from "react-router-dom"; 
 import api from "../services/api";
@@ -10,6 +9,7 @@ function StationsPage() {
     const navigate = useNavigate();
 
     const [stations, setStations] = useState([]);
+    const [error, setError] = useState("");
   
     useEffect(() => {
 
@@ -20,7 +20,10 @@ function StationsPage() {
 
     setStations(response.data);
 
-});
+})
+        .catch(() => {
+            setError("Unable to load charging stations. Please try again later.");
+        });
 
     }, []);
 
@@ -31,6 +34,8 @@ function StationsPage() {
     <Navbar/>
 
     <h1>EV Charging Stations</h1>
+
+    {error && <p>{error}</p>}
 
     <div className="stations-grid">
 
