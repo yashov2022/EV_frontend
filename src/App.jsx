@@ -58,13 +58,17 @@ function App() {
           element={ <ProtectedRoute><MapPage /></ProtectedRoute> }
         />
 
-       <Route
+       {/* <Route
       path="/dashboard"
      element={
         localStorage.getItem("role") === "ADMIN"
             ? <DashboardPage/>
             : <Navigate to="/stations"/>
     }
+/> */}
+<Route
+    path="/dashboard"
+    element={<h1>ADMIN DASHBOARD TEST</h1>}
 />
       </Routes>
 
