@@ -59,13 +59,13 @@ function App() {
         />
 
        <Route
-      path="/dashboard"
-     element={
-        localStorage.getItem("role") === "ADMIN"
-            ? <DashboardPage/>
-            : <Navigate to="/stations"/>
-    }
-/>
+          path="/dashboard"
+          element={
+            localStorage.getItem("role") === "ADMIN"
+              ? <DashboardPage />
+              : <Navigate to="/login" />
+          }
+        />
       </Routes>
 
     </BrowserRouter>
